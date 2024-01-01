@@ -8,7 +8,7 @@ const port = 3000;
 let httpServer;
 
 // Start the server before running any tests
-beforeAll(done => {
+beforeAll((done) => {
   httpServer = server.listen(port, hostname, () => {
     console.log(`Test server running at http://${hostname}:${port}/`);
     done(); // Signal Jest to proceed with testing once the server is up
@@ -16,7 +16,7 @@ beforeAll(done => {
 });
 
 // Shut down the server after all tests are done
-afterAll(done => {
+afterAll((done) => {
   httpServer.close(() => {
     console.log('Test server closed');
     done(); // Signal Jest that cleaning up is complete and it can exit
@@ -24,7 +24,7 @@ afterAll(done => {
 });
 
 test('responds to requests', async () => {
-  const response = await new Promise(resolve => {
+  const response = await new Promise((resolve) => {
     http.get(`http://${hostname}:${port}/`, resolve);
   });
 
