@@ -10,5 +10,14 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-    }
+    },
+    "overrides": [
+        {
+            "files": ["*.test.js", "*.spec.js"], // Target test files
+            "rules": {
+            // Disable the 'no-restricted-syntax' rule for test files
+            "no-restricted-syntax": "off"
+            }
+        }
+    ]
 }
