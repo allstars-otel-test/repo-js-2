@@ -1,0 +1,14 @@
+optConfig:
+  optIn: true
+action: issue
+groups:
+  - name: "test-2"
+    repos:
+      - name: "repo*"
+    rules:
+      - name: "ci-test-2"
+        method: "require"
+        requireAll: true
+        mustPass: false
+        actions:
+          - name: "testoverride*"
